@@ -8,9 +8,9 @@ import com.intellij.openapi.util.IconLoader
 
 import javax.swing.*
 
-public class ATSIcons {
+class ATSIcons {
     companion object {
-        public val FILE: Icon = IconLoader.getIcon("/com/atslangplugin/icons/ATSLogo.png")
+        val FILE: Icon = IconLoader.getIcon("/com/atslangplugin/icons/ATSLogo.png")
     }
 
 }

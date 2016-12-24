@@ -7,7 +7,7 @@ import javax.swing.*
 /**
  * Created by brandon on 12/16/14.
  */
-public class ATSFileTypeDynamic private() : LanguageFileType(ATSLanguage.INSTANCE) {
+class ATSFileTypeDynamic private constructor() : LanguageFileType(ATSLanguage.INSTANCE) {
 
     override fun getName(): String {
         return "dats file"
@@ -26,6 +26,6 @@ public class ATSFileTypeDynamic private() : LanguageFileType(ATSLanguage.INSTANC
     }
 
     companion object {
-        public val INSTANCE: ATSFileTypeDynamic = ATSFileTypeDynamic()
+        val INSTANCE: ATSFileTypeDynamic = ATSFileTypeDynamic()
     }
 }

@@ -35,19 +35,15 @@ public class ATSLexerAdapterTest {
 
     var coroutine_seq = ""
 
-    Before
-    throws(javaClass<Exception>())
-    public fun before() {
-
+    @Before
+    fun before() {
         myLexerAdapter = ATSLexerAdapter()
         //
         coroutine_seq = getFileAsString<ATSLexerAdapterTest>(coroutinePath)
-
     }
 
-    After
-    throws(javaClass<Exception>())
-    public fun after() {
+    @After
+    fun after() {
     }
 
 
@@ -59,14 +55,11 @@ public class ATSLexerAdapterTest {
     * * This is a simple test for correctness, making sure
     * * several tokens are as expected.
      */
-    Test
-    throws(javaClass<Exception>())
-    public fun testAdvance() {
+    @Test
+    fun testAdvance() {
         myLexerAdapter!!.start(twoLineATS_seq)
-
-        var token: IElementType
         val tokenStr: String
-        token = myLexerAdapter!!.getTokenType()
+        var token = myLexerAdapter!!.getTokenType()
         //Assert.assertEquals(token, ATSTokenTypes.COMMENT);
         //
         myLexerAdapter!!.advance()
@@ -83,9 +76,8 @@ public class ATSLexerAdapterTest {
     * *
     * * Tests for completion of scanning several ATS2 files.
      */
-    Test
-    throws(javaClass<Exception>())
-    public fun testAdvance2() {
+    @Test
+    fun testAdvance2() {
         //scanFile(twoLineATS_seq);
         // How to reset the lexer here?
         //scanFile(coroutine_seq);

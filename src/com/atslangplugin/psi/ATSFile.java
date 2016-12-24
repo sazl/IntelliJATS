@@ -21,7 +21,7 @@ import javax.swing.text.StringContent;
 public class ATSFile extends PsiFileBase {
 
     public ATSFile(@NotNull FileViewProvider viewProvider) {
-        super(viewProvider, ATSLanguage.INSTANCE);
+        super(viewProvider, ATSLanguage.Companion.getINSTANCE());
 
         String extension = "";
         int i = this.getName().lastIndexOf('.');
@@ -29,11 +29,11 @@ public class ATSFile extends PsiFileBase {
             extension = this.getName().substring(i + 1);
         }
         if (extension.equals("dats")) {
-            myFileTypeInstance = ATSFileTypeDynamic.INSTANCE;
+            myFileTypeInstance = ATSFileTypeDynamic.Companion.getINSTANCE();
         } else if (extension.equals("sats")) {
-            myFileTypeInstance = ATSFileTypeStatic.INSTANCE;
+            myFileTypeInstance = ATSFileTypeStatic.Companion.getINSTANCE();
         } else if (extension.equals("hats")) {
-            myFileTypeInstance = ATSFileTypeInclude.INSTANCE;
+            myFileTypeInstance = ATSFileTypeInclude.Companion.getINSTANCE();
         } else {
             // This is probably not exactly what we need:
             throw new InvalidVirtualFileAccessException(this.getName());
@@ -45,7 +45,7 @@ public class ATSFile extends PsiFileBase {
     @NotNull
     @Override
     public FileType getFileType() {
-        return  myFileTypeInstance;
+        return myFileTypeInstance;
     }
 
     @Override

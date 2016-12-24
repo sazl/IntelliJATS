@@ -7,7 +7,7 @@ import javax.swing.*
 /**
  * Created by brandon on 12/16/14.
  */
-public class ATSFileTypeStatic private() : LanguageFileType(ATSLanguage.INSTANCE) {
+class ATSFileTypeStatic private constructor() : LanguageFileType(ATSLanguage.INSTANCE) {
 
     override fun getName(): String {
         return "sats file"
@@ -26,6 +26,6 @@ public class ATSFileTypeStatic private() : LanguageFileType(ATSLanguage.INSTANCE
     }
 
     companion object {
-        public val INSTANCE: ATSFileTypeStatic = ATSFileTypeStatic()
+        val INSTANCE: ATSFileTypeStatic = ATSFileTypeStatic()
     }
 }

@@ -27,7 +27,7 @@ import java.nio.charset.Charset
  * Created by Brandon Elam Barker on 12/21/2014.
  */
 
-public class ATSColorSettingsPage : ColorSettingsPage {
+class ATSColorSettingsPage : ColorSettingsPage {
 
     override fun getIcon(): Icon? {
         return ATSIcons.FILE
@@ -60,7 +60,7 @@ public class ATSColorSettingsPage : ColorSettingsPage {
     }
 
     companion object {
-        private val DESCRIPTORS = array(
+        private val DESCRIPTORS = arrayOf(
                 AttributesDescriptor("Block comments", ATSSyntaxHighlighter.ATS_BLOCK_COMMENT),
                 AttributesDescriptor("Braces", ATSSyntaxHighlighter.ATS_BRACES),
                 AttributesDescriptor("Brackets", ATSSyntaxHighlighter.ATS_BRACKETS),

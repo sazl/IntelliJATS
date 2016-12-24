@@ -8,19 +8,19 @@ import kotlin.properties.Delegates
 /**
  * Created by Brandon Elam Barker on 12/20/2014.
  */
-public class ATSLexerAdapter : FlexAdapter(ATSLexer(null:Reader?)) {
+class ATSLexerAdapter : FlexAdapter(ATSLexer(null as Reader?)) {
 
     private var myFlex: ATSLexer? = null
 
-    {
-        myFlex = this.getFlex() as ATSLexer
-    }
-
-    public fun getYyline(): Int {
+    fun getYyline(): Int {
         return myFlex!!.getYyline()
     }
 
-    public fun getYycolumn(): Int {
+    fun getYycolumn(): Int {
         return myFlex!!.getYycolumn()
+    }
+
+    init {
+        this.myFlex = this.flex as ATSLexer
     }
 }

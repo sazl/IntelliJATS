@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class ATSElementType extends IElementType {
     public ATSElementType(@NotNull @NonNls String debugName){
-        super (debugName, ATSLanguage.INSTANCE);
+        super (debugName, ATSLanguage.Companion.getINSTANCE());
     }
 
 }

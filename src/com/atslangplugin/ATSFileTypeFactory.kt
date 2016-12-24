@@ -11,21 +11,21 @@ import java.util.ArrayList
 /**
  * Created by brandon on 12/17/14.
  */
-public class ATSFileTypeFactory : FileTypeFactory() {
+class ATSFileTypeFactory : FileTypeFactory() {
 
     override fun createFileTypes(fileTypeConsumer: FileTypeConsumer) {
         val matcherList = ArrayList<FileNameMatcher>()
 
         val ATSSourceExtensions = ArrayList<String>(3)
-        ATSSourceExtensions.add(0, ATSFileTypeDynamic.INSTANCE.getDefaultExtension())
-        ATSSourceExtensions.add(1, ATSFileTypeStatic.INSTANCE.getDefaultExtension())
-        ATSSourceExtensions.add(2, ATSFileTypeInclude.INSTANCE.getDefaultExtension())
+        ATSSourceExtensions.add(0, ATSFileTypeDynamic.INSTANCE.defaultExtension)
+        ATSSourceExtensions.add(1, ATSFileTypeStatic.INSTANCE.defaultExtension)
+        ATSSourceExtensions.add(2, ATSFileTypeInclude.INSTANCE.defaultExtension)
 
         for (s in ATSSourceExtensions) {
             matcherList.add(ExtensionFileNameMatcher(s))
         }
 
-        fileTypeConsumer.consume(ATSFileTypeDynamic.INSTANCE, *matcherList.toArray<FileNameMatcher>(arrayOfNulls<FileNameMatcher>(matcherList.size())))
+        fileTypeConsumer.consume(ATSFileTypeDynamic.INSTANCE, *matcherList.toArray<FileNameMatcher>(arrayOfNulls<FileNameMatcher>(matcherList.size)))
         matcherList.clear()
         // Could now include support for other file matching procedures,
         // like exact file names

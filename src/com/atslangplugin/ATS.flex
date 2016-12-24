@@ -96,240 +96,240 @@ CHAR_LITERAL="'"({CHAR_SINGLEQ_BASE})("'"|\\)? | \"({CHAR_DOUBLEQ_BASE})*(\"|\\)
 /*  *** *** keywords and symbols  *** ***  */
 
 <YYINITIAL> {
-"'("                        { return ATSTokenTypes.QUOTELPAREN; }
-"["                         { return ATSTokenTypes.LBRACKET; }
-"{"                         { return ATSTokenTypes.LBRACE; }
-"'["                        { return ATSTokenTypes.QUOTELBRACKET; }
-"'{"                        { return ATSTokenTypes.QUOTELBRACE; }
+"'("                        { return ATSTokenTypes.Companion.getQUOTELPAREN(); }
+"["                         { return ATSTokenTypes.Companion.getLBRACKET(); }
+"{"                         { return ATSTokenTypes.Companion.getLBRACE(); }
+"'["                        { return ATSTokenTypes.Companion.getQUOTELBRACKET(); }
+"'{"                        { return ATSTokenTypes.Companion.getQUOTELBRACE(); }
 //
-"@"                         { return ATSTokenTypes.AT; }
+"@"                         { return ATSTokenTypes.Companion.getAT(); }
 //
-"\\"                        { return ATSTokenTypes.BACKSLASH; }
-"!"                         { return ATSTokenTypes.BANG; }
-"|"                         { return ATSTokenTypes.BAR; }
-"`"                         { return ATSTokenTypes.BQUOTE; }
+"\\"                        { return ATSTokenTypes.Companion.getBACKSLASH(); }
+"!"                         { return ATSTokenTypes.Companion.getBANG(); }
+"|"                         { return ATSTokenTypes.Companion.getBAR(); }
+"`"                         { return ATSTokenTypes.Companion.getBQUOTE(); }
 //
-":"                         { return ATSTokenTypes.COLON; }
-":<"                        { return ATSTokenTypes.COLONLT; }
+":"                         { return ATSTokenTypes.Companion.getCOLON(); }
+":<"                        { return ATSTokenTypes.Companion.getCOLONLT(); }
 /*
   | T_COLONLTGT of () // :<> // HX: impossible
 */
 //
-"$"                         { return ATSTokenTypes.DOLLAR; }
+"$"                         { return ATSTokenTypes.Companion.getDOLLAR(); }
 //
-"."                         { return ATSTokenTypes.DOT; }
-".."                        { return ATSTokenTypes.DOTDOT; }
-"..."                       { return ATSTokenTypes.DOTDOTDOT; }
+"."                         { return ATSTokenTypes.Companion.getDOT(); }
+".."                        { return ATSTokenTypes.Companion.getDOTDOT(); }
+"..."                       { return ATSTokenTypes.Companion.getDOTDOTDOT(); }
 //
-"."({DIGIT}+)               { return ATSTokenTypes.DOTINT; }
+"."({DIGIT}+)               { return ATSTokenTypes.Companion.getDOTINT(); }
 //
-"="                         { return ATSTokenTypes.EQ; }
-"=>"                        { return ATSTokenTypes.EQGT; }
-"=<"                        { return ATSTokenTypes.EQLT; }
-"=<>"                       { return ATSTokenTypes.EQLTGT; }
-"=/=>"                      { return ATSTokenTypes.EQSLASHEQGT; }
-"=>>"                       { return ATSTokenTypes.EQGTGT; }
-"=/=>>"                     { return ATSTokenTypes.EQSLASHEQGTGT; }
+"="                         { return ATSTokenTypes.Companion.getEQ(); }
+"=>"                        { return ATSTokenTypes.Companion.getEQGT(); }
+"=<"                        { return ATSTokenTypes.Companion.getEQLT(); }
+"=<>"                       { return ATSTokenTypes.Companion.getEQLTGT(); }
+"=/=>"                      { return ATSTokenTypes.Companion.getEQSLASHEQGT(); }
+"=>>"                       { return ATSTokenTypes.Companion.getEQGTGT(); }
+"=/=>>"                     { return ATSTokenTypes.Companion.getEQSLASHEQGTGT(); }
 //
-"#"                         { return ATSTokenTypes.HASH; }
+"#"                         { return ATSTokenTypes.Companion.getHASH(); }
 //
-"<"                         { return ATSTokenTypes.LT; } // for opening a tmparg
-">"                         { return ATSTokenTypes.GT; } // for closing a tmparg
+"<"                         { return ATSTokenTypes.Companion.getLT(); } // for opening a tmparg
+">"                         { return ATSTokenTypes.Companion.getGT(); } // for closing a tmparg
 //
-"<>"                        { return ATSTokenTypes.GTLT; }
-".<"                        { return ATSTokenTypes.DOTLT; } // opening termetric
-">."                        { return ATSTokenTypes.GTDOT; } // closing termetric
-".<>."                      { return ATSTokenTypes.DOTLTGTDOT; } // empty termetric
+"<>"                        { return ATSTokenTypes.Companion.getGTLT(); }
+".<"                        { return ATSTokenTypes.Companion.getDOTLT(); } // opening termetric
+">."                        { return ATSTokenTypes.Companion.getGTDOT(); } // closing termetric
+".<>."                      { return ATSTokenTypes.Companion.getDOTLTGTDOT(); } // empty termetric
 //
-"->"                        { return ATSTokenTypes.MINUSGT; }
-"-<"                        { return ATSTokenTypes.MINUSLT; }
-"-<>"                       { return ATSTokenTypes.MINUSLTGT; }
+"->"                        { return ATSTokenTypes.Companion.getMINUSGT(); }
+"-<"                        { return ATSTokenTypes.Companion.getMINUSLT(); }
+"-<>"                       { return ATSTokenTypes.Companion.getMINUSLTGT(); }
 //
-"~"                         { return ATSTokenTypes.TILDE; }
+"~"                         { return ATSTokenTypes.Companion.getTILDE(); }
 //
 "abstype"|"abst0ype"|"absprop"|"absview"| "absviewtype"|
 "absvtype"|"absviewt@ype"|"absvt0ype"|"absviewt0ype"
-                            { return ATSTokenTypes.ABSTYPE; }
+                            { return ATSTokenTypes.Companion.getABSTYPE(); }
 //
-"and"                       { return ATSTokenTypes.AND; }
-"as"                        { return ATSTokenTypes.AS; }
-"assume"                    { return ATSTokenTypes.ASSUME; }
-"begin"                     { return ATSTokenTypes.BEGIN; }
+"and"                       { return ATSTokenTypes.Companion.getAND(); }
+"as"                        { return ATSTokenTypes.Companion.getAS(); }
+"assume"                    { return ATSTokenTypes.Companion.getASSUME(); }
+"begin"                     { return ATSTokenTypes.Companion.getBEGIN(); }
 "case"|"case-"|"case+"|"prcase"
-                            { return ATSTokenTypes.CASE; }
-"classdec"                  { return ATSTokenTypes.CLASSDEC; } // CHECK_ME
-"datasort"                  { return ATSTokenTypes.DATASORT; }
+                            { return ATSTokenTypes.Companion.getCASE(); }
+"classdec"                  { return ATSTokenTypes.Companion.getCLASSDEC(); } // CHECK_ME
+"datasort"                  { return ATSTokenTypes.Companion.getDATASORT(); }
 // BB: surprising to me these all generate the same token:
 // (but maybe not exactly, see ./src/pats_lexing_token.dats)
 "datatype"|"dataprop"|"dataview"|"dataviewtype"|"datavtype"
-                            { return ATSTokenTypes.DATATYPE; }
-"do"                        { return ATSTokenTypes.DO; }
-"dynload"                   { return ATSTokenTypes.DYNLOAD; }
-"else"                      { return ATSTokenTypes.ELSE; }
-"end"                       { return ATSTokenTypes.END; }
-"exception"                 { return ATSTokenTypes.EXCEPTION; }
+                            { return ATSTokenTypes.Companion.getDATATYPE(); }
+"do"                        { return ATSTokenTypes.Companion.getDO(); }
+"dynload"                   { return ATSTokenTypes.Companion.getDYNLOAD(); }
+"else"                      { return ATSTokenTypes.Companion.getELSE(); }
+"end"                       { return ATSTokenTypes.Companion.getEND(); }
+"exception"                 { return ATSTokenTypes.Companion.getEXCEPTION(); }
 //
-"extern"                    { return ATSTokenTypes.EXTERN; }
-"extype"                    { return ATSTokenTypes.EXTYPE; }
-"extvar"                    { return ATSTokenTypes.EXTVAR; }
+"extern"                    { return ATSTokenTypes.Companion.getEXTERN(); }
+"extype"                    { return ATSTokenTypes.Companion.getEXTYPE(); }
+"extvar"                    { return ATSTokenTypes.Companion.getEXTVAR(); }
 //
-"fix"|"fix@"                { return ATSTokenTypes.FIX; }
+"fix"|"fix@"                { return ATSTokenTypes.Companion.getFIX(); }
 "infix"|"infixl"|"infixr"|"prefix"|"postfix"
-                            { return ATSTokenTypes.FIXITY; }
-"for*"                      { return ATSTokenTypes.FORSTAR; }
+                            { return ATSTokenTypes.Companion.getFIXITY(); }
+"for*"                      { return ATSTokenTypes.Companion.getFORSTAR(); }
 "fn"|"fnx"|"fun"|"prfn"|"prfun"|"praxi"|"castfn"
-                            { return ATSTokenTypes.FUN; }
-"if"                        { return ATSTokenTypes.IF; } // dynamic
-"implement"|"primplement"   { return ATSTokenTypes.IMPLEMENT; }
-"import"                    { return ATSTokenTypes.IMPORT; }
-"in"                        { return ATSTokenTypes.IN; }
-"lam"|"llam"|"lam@"         { return ATSTokenTypes.LAM; }
-"let"                       { return ATSTokenTypes.LET; }
-"local"                     { return ATSTokenTypes.LOCAL; }
-"macdef"|"macrodef"         { return ATSTokenTypes.MACDEF; }
-"nonfix"                    { return ATSTokenTypes.NONFIX; }
-"overload"                  { return ATSTokenTypes.OVERLOAD; }
-"of"                        { return ATSTokenTypes.OF; }
-"op"                        { return ATSTokenTypes.OP; }
-"rec"                       { return ATSTokenTypes.REC; }
-"ref@"                      { return ATSTokenTypes.REFAT; }
-"require"                   { return ATSTokenTypes.REQUIRE; }
-"scase"                     { return ATSTokenTypes.SCASE; }
-"sif"                       { return ATSTokenTypes.SIF; } // static
-"sortdef"                   { return ATSTokenTypes.SORTDEF; }
-"stacst"                    { return ATSTokenTypes.STACST; }
-"stadef"                    { return ATSTokenTypes.STADEF; }
-"staload"                   { return ATSTokenTypes.STALOAD; }
-"static"                    { return ATSTokenTypes.STATIC; }
+                            { return ATSTokenTypes.Companion.getFUN(); }
+"if"                        { return ATSTokenTypes.Companion.getIF(); } // dynamic
+"implement"|"primplement"   { return ATSTokenTypes.Companion.getIMPLEMENT(); }
+"import"                    { return ATSTokenTypes.Companion.getIMPORT(); }
+"in"                        { return ATSTokenTypes.Companion.getIN(); }
+"lam"|"llam"|"lam@"         { return ATSTokenTypes.Companion.getLAM(); }
+"let"                       { return ATSTokenTypes.Companion.getLET(); }
+"local"                     { return ATSTokenTypes.Companion.getLOCAL(); }
+"macdef"|"macrodef"         { return ATSTokenTypes.Companion.getMACDEF(); }
+"nonfix"                    { return ATSTokenTypes.Companion.getNONFIX(); }
+"overload"                  { return ATSTokenTypes.Companion.getOVERLOAD(); }
+"of"                        { return ATSTokenTypes.Companion.getOF(); }
+"op"                        { return ATSTokenTypes.Companion.getOP(); }
+"rec"                       { return ATSTokenTypes.Companion.getREC(); }
+"ref@"                      { return ATSTokenTypes.Companion.getREFAT(); }
+"require"                   { return ATSTokenTypes.Companion.getREQUIRE(); }
+"scase"                     { return ATSTokenTypes.Companion.getSCASE(); }
+"sif"                       { return ATSTokenTypes.Companion.getSIF(); } // static
+"sortdef"                   { return ATSTokenTypes.Companion.getSORTDEF(); }
+"stacst"                    { return ATSTokenTypes.Companion.getSTACST(); }
+"stadef"                    { return ATSTokenTypes.Companion.getSTADEF(); }
+"staload"                   { return ATSTokenTypes.Companion.getSTALOAD(); }
+"static"                    { return ATSTokenTypes.Companion.getSTATIC(); }
 /*
   | T_STAVAR of () // stavar // HX: a suspended hack
 */
-"symelim"                   { return ATSTokenTypes.SYMELIM; }
-"symintr"                   { return ATSTokenTypes.SYMINTR; }
-"then"                      { return ATSTokenTypes.THEN; }
-"tkindef"                   { return ATSTokenTypes.TKINDEF; }
-"try"                       { return ATSTokenTypes.TRY; }
-"type"|"type+"|"type-"      { return ATSTokenTypes.TYPE; }
+"symelim"                   { return ATSTokenTypes.Companion.getSYMELIM(); }
+"symintr"                   { return ATSTokenTypes.Companion.getSYMINTR(); }
+"then"                      { return ATSTokenTypes.Companion.getTHEN(); }
+"tkindef"                   { return ATSTokenTypes.Companion.getTKINDEF(); }
+"try"                       { return ATSTokenTypes.Companion.getTRY(); }
+"type"|"type+"|"type-"      { return ATSTokenTypes.Companion.getTYPE(); }
 "typedef"|"propdef"|"viewdef"|"viewtypedef" // CHECK_ME: aliases?
-                            { return ATSTokenTypes.TYPEDEF; }
-"val"|"val+"|"val-"|"prval" { return ATSTokenTypes.VAL; }
-"var"|"prvar"               { return ATSTokenTypes.VAR; }
-"when"                      { return ATSTokenTypes.WHEN; }
-"where"                     { return ATSTokenTypes.WHERE; }
-"while"                     { return ATSTokenTypes.WHILE; }
-"while*"                    { return ATSTokenTypes.WHILESTAR; }
-"with"                      { return ATSTokenTypes.WITH; }
+                            { return ATSTokenTypes.Companion.getTYPEDEF(); }
+"val"|"val+"|"val-"|"prval" { return ATSTokenTypes.Companion.getVAL(); }
+"var"|"prvar"               { return ATSTokenTypes.Companion.getVAR(); }
+"when"                      { return ATSTokenTypes.Companion.getWHEN(); }
+"where"                     { return ATSTokenTypes.Companion.getWHERE(); }
+"while"                     { return ATSTokenTypes.Companion.getWHILE(); }
+"while*"                    { return ATSTokenTypes.Companion.getWHILESTAR(); }
+"with"                      { return ATSTokenTypes.Companion.getWITH(); }
 "withtype"|"withprop"|"withview"|"withviewtype"
-                            { return ATSTokenTypes.WITHTYPE; }
+                            { return ATSTokenTypes.Companion.getWITHTYPE(); }
 //
-"addr@"                     { return ATSTokenTypes.ADDRAT; }
-"fold@"                     { return ATSTokenTypes.FOLDAT; }
-"free@"                     { return ATSTokenTypes.FREEAT; }
-"view@"                     { return ATSTokenTypes.VIEWAT; }
+"addr@"                     { return ATSTokenTypes.Companion.getADDRAT(); }
+"fold@"                     { return ATSTokenTypes.Companion.getFOLDAT(); }
+"free@"                     { return ATSTokenTypes.Companion.getFREEAT(); }
+"view@"                     { return ATSTokenTypes.Companion.getVIEWAT(); }
 //
-"$arrpsz"|"$arrptrsize"     { return ATSTokenTypes.DLRARRPSZ; }
+"$arrpsz"|"$arrptrsize"     { return ATSTokenTypes.Companion.getDLRARRPSZ(); }
 //
-"$delay"|"$ldelay"          { return ATSTokenTypes.DLRDELAY; }
+"$delay"|"$ldelay"          { return ATSTokenTypes.Companion.getDLRDELAY(); }
 //
-"$effmask"                  { return ATSTokenTypes.DLREFFMASK; }
+"$effmask"                  { return ATSTokenTypes.Companion.getDLREFFMASK(); }
 "ntm"|"exn"|"ref"|"wrt"|"all"
-                            { return ATSTokenTypes.DLREFFMASK_ARG; }
-"$extern"                   { return ATSTokenTypes.DLREXTERN; }
-"$extkind"                  { return ATSTokenTypes.DLREXTKIND; }
-"$extype"                   { return ATSTokenTypes.DLREXTYPE; }
-"$extype_struct"            { return ATSTokenTypes.DLREXTYPE_STRUCT; }
+                            { return ATSTokenTypes.Companion.getDLREFFMASK_ARG(); }
+"$extern"                   { return ATSTokenTypes.Companion.getDLREXTERN(); }
+"$extkind"                  { return ATSTokenTypes.Companion.getDLREXTKIND(); }
+"$extype"                   { return ATSTokenTypes.Companion.getDLREXTYPE(); }
+"$extype_struct"            { return ATSTokenTypes.Companion.getDLREXTYPE_STRUCT(); }
 //
-"$extval"                   { return ATSTokenTypes.DLREXTVAL; }
-"$extfcall"                 { return ATSTokenTypes.DLREXTFCALL; }
-"$extmcall"                 { return ATSTokenTypes.DLREXTMCALL; }
+"$extval"                   { return ATSTokenTypes.Companion.getDLREXTVAL(); }
+"$extfcall"                 { return ATSTokenTypes.Companion.getDLREXTFCALL(); }
+"$extmcall"                 { return ATSTokenTypes.Companion.getDLREXTMCALL(); }
 //
-"$break"                    { return ATSTokenTypes.DLRBREAK; }
-"$continue"                 { return ATSTokenTypes.DLRCONTINUE; }
-"$raise"                    { return ATSTokenTypes.DLRRAISE; }
+"$break"                    { return ATSTokenTypes.Companion.getDLRBREAK(); }
+"$continue"                 { return ATSTokenTypes.Companion.getDLRCONTINUE(); }
+"$raise"                    { return ATSTokenTypes.Companion.getDLRRAISE(); }
 //
 "$lst"|"$list"|"$lst_t"|"$list_t"|"$lst_vt"|"$list_vt"
-                            { return ATSTokenTypes.DLRLST; }
+                            { return ATSTokenTypes.Companion.getDLRLST(); }
 "$rec"|"$record"|"$rec_t"|"$record_t"|"$rec_vt"|"$record_vt"
-                            { return ATSTokenTypes.DLRREC; }
+                            { return ATSTokenTypes.Companion.getDLRREC(); }
 "$tup"|"$tup_t"|"$tup_vt"|"$tuple"|"$tuple_t"|"$tuple_vt"
-                            { return ATSTokenTypes.DLRTUP; }
+                            { return ATSTokenTypes.Companion.getDLRTUP(); }
 //
-"$myfilename"               { return ATSTokenTypes.DLRMYFILENAME; }
-"$mylocation"               { return ATSTokenTypes.DLRMYLOCATION; }
-"$myfunction"               { return ATSTokenTypes.DLRMYFUNCTION; }
+"$myfilename"               { return ATSTokenTypes.Companion.getDLRMYFILENAME(); }
+"$mylocation"               { return ATSTokenTypes.Companion.getDLRMYLOCATION(); }
+"$myfunction"               { return ATSTokenTypes.Companion.getDLRMYFUNCTION(); }
 //
-"$showtype"                 { return ATSTokenTypes.DLRSHOWTYPE; }
+"$showtype"                 { return ATSTokenTypes.Companion.getDLRSHOWTYPE(); }
 //
 "$vcopyenv_v"|"$vcopyenv_vt(vt)"
-                            { return ATSTokenTypes.DLRVCOPYENV; }
-"$tempenver"                { return ATSTokenTypes.DLRTEMPENVER; }
+                            { return ATSTokenTypes.Companion.getDLRVCOPYENV(); }
+"$tempenver"                { return ATSTokenTypes.Companion.getDLRTEMPENVER(); }
 //
-"#assert"                   { return ATSTokenTypes.SRPASSERT; }
-"#define"                   { return ATSTokenTypes.SRPDEFINE; }
-"#elif"                     { return ATSTokenTypes.SRPELIF; }
-"#elifdef"                  { return ATSTokenTypes.SRPELIFDEF; }
-"#elifndef"                 { return ATSTokenTypes.SRPELIFNDEF; }
-"#else"                     { return ATSTokenTypes.SRPELSE; }
-"#endif"                    { return ATSTokenTypes.SRPENDIF; }
-"#error"                    { return ATSTokenTypes.SRPERROR; }
-"#if"                       { return ATSTokenTypes.SRPIF; }
-"#ifdef"                    { return ATSTokenTypes.SRPIFDEF; }
-"#ifndef"                   { return ATSTokenTypes.SRPIFNDEF; }
-"#include"                  { return ATSTokenTypes.SRPINCLUDE; }
-"#print"                    { return ATSTokenTypes.SRPPRINT; }
-"#then"                     { return ATSTokenTypes.SRPTHEN; }
-"#undef"                    { return ATSTokenTypes.SRPUNDEF; }
+"#assert"                   { return ATSTokenTypes.Companion.getSRPASSERT(); }
+"#define"                   { return ATSTokenTypes.Companion.getSRPDEFINE(); }
+"#elif"                     { return ATSTokenTypes.Companion.getSRPELIF(); }
+"#elifdef"                  { return ATSTokenTypes.Companion.getSRPELIFDEF(); }
+"#elifndef"                 { return ATSTokenTypes.Companion.getSRPELIFNDEF(); }
+"#else"                     { return ATSTokenTypes.Companion.getSRPELSE(); }
+"#endif"                    { return ATSTokenTypes.Companion.getSRPENDIF(); }
+"#error"                    { return ATSTokenTypes.Companion.getSRPERROR(); }
+"#if"                       { return ATSTokenTypes.Companion.getSRPIF(); }
+"#ifdef"                    { return ATSTokenTypes.Companion.getSRPIFDEF(); }
+"#ifndef"                   { return ATSTokenTypes.Companion.getSRPIFNDEF(); }
+"#include"                  { return ATSTokenTypes.Companion.getSRPINCLUDE(); }
+"#print"                    { return ATSTokenTypes.Companion.getSRPPRINT(); }
+"#then"                     { return ATSTokenTypes.Companion.getSRPTHEN(); }
+"#undef"                    { return ATSTokenTypes.Companion.getSRPUNDEF(); }
 //
 // The internal lexing of views + types seems to be a bit complicated
 // For now I try to simplify it a bit; currently not handled: (FIX_ME)
 // T_IDENT_alp
 //
-{INTEGER_LITERAL}           { return ATSTokenTypes.INT; }  // CHECK_ME
-{CHAR_LITERAL}              { return ATSTokenTypes.CHAR; }  // CHECK_ME
-{FLOAT_LITERAL}             { return ATSTokenTypes.FLOAT; }
-//?                         { return ATSTokenTypes.CDATA; }  // Unused; for binary data
+{INTEGER_LITERAL}           { return ATSTokenTypes.Companion.getINT(); }  // CHECK_ME
+{CHAR_LITERAL}              { return ATSTokenTypes.Companion.getCHAR(); }  // CHECK_ME
+{FLOAT_LITERAL}             { return ATSTokenTypes.Companion.getFLOAT(); }
+//?                         { return ATSTokenTypes.Companion.getCDATA; }  // Unused(); for binary data
 {QUOTED_LITERAL}|{DOUBLE_QUOTED_LITERAL}
-                            { return ATSTokenTypes.STRING; }  // CHECK_ME
+                            { return ATSTokenTypes.Companion.getSTRING(); }  // CHECK_ME
 //
 /*
   | T_LABEL of (int(*knd*), string) // HX-2013-01: should it be supported?
 */
 //
-","                         { return ATSTokenTypes.COMMA; }
-";"                         { return ATSTokenTypes.SEMICOLON; }
+","                         { return ATSTokenTypes.Companion.getCOMMA(); }
+";"                         { return ATSTokenTypes.Companion.getSEMICOLON(); }
 //
-"("                         { return ATSTokenTypes.LPAREN; }
-")"                         { return ATSTokenTypes.RPAREN; }
-"]"                         { return ATSTokenTypes.RBRACKET; }
-"}"                         { return ATSTokenTypes.RBRACE; }
+"("                         { return ATSTokenTypes.Companion.getLPAREN(); }
+")"                         { return ATSTokenTypes.Companion.getRPAREN(); }
+"]"                         { return ATSTokenTypes.Companion.getRBRACKET(); }
+"}"                         { return ATSTokenTypes.Companion.getRBRACE(); }
 //
-"@("                        { return ATSTokenTypes.ATLPAREN; }
-"@["                        { return ATSTokenTypes.ATLBRACKET; }
-"#["                        { return ATSTokenTypes.HASHLBRACKETOLON; }
-"@{"                        { return ATSTokenTypes.ATLBRACE; }
+"@("                        { return ATSTokenTypes.Companion.getATLPAREN(); }
+"@["                        { return ATSTokenTypes.Companion.getATLBRACKET(); }
+"#["                        { return ATSTokenTypes.Companion.getHASHLBRACKETOLON(); }
+"@{"                        { return ATSTokenTypes.Companion.getATLBRACE(); }
 //
 // For macros:
 //
-"`("                        { return ATSTokenTypes.BQUOTELPAREN; }
-",("                        { return ATSTokenTypes.COMMALPAREN; }
-"%("                        { return ATSTokenTypes.PERCENTLPAREN; }
+"`("                        { return ATSTokenTypes.Companion.getBQUOTELPAREN(); }
+",("                        { return ATSTokenTypes.Companion.getCOMMALPAREN(); }
+"%("                        { return ATSTokenTypes.Companion.getPERCENTLPAREN(); }
 //
-{EXTCODE}                   { return ATSTokenTypes.EXTCODE; }
+{EXTCODE}                   { return ATSTokenTypes.Companion.getEXTCODE(); }
 //
-{END_OF_LINE_COMMENT}       { return ATSTokenTypes.COMMENT_LINE; }
-{TRADITIONAL_COMMENT}       { return ATSTokenTypes.COMMENT_BLOCK; }
-{END_OF_FILE_COMMENT}       { return ATSTokenTypes.COMMENT_REST; }
-{COMMENT}                   { return ATSTokenTypes.COMMENT; }
+{END_OF_LINE_COMMENT}       { return ATSTokenTypes.Companion.getCOMMENT_LINE(); }
+{TRADITIONAL_COMMENT}       { return ATSTokenTypes.Companion.getCOMMENT_BLOCK(); }
+{END_OF_FILE_COMMENT}       { return ATSTokenTypes.Companion.getCOMMENT_REST(); }
+{COMMENT}                   { return ATSTokenTypes.Companion.getCOMMENT(); }
 //
-"%"                         { return ATSTokenTypes.PERCENT; }
-"?"                         { return ATSTokenTypes.QMARK; }
+"%"                         { return ATSTokenTypes.Companion.getPERCENT(); }
+"?"                         { return ATSTokenTypes.Companion.getQMARK(); }
 
 //Not ATS tokens, precisely:
-{WHITE_SPACE}               { return ATSTokenTypes.WHITE_SPACE; }
-{CRLF}                      { return ATSTokenTypes.CRLF; }
-{IDENTIFIER}                { return ATSTokenTypes.IDENTIFIER; }
-"!"{IDENTIFIER}             { return ATSTokenTypes.VAL_IDENTIFIER; }
-"&"{IDENTIFIER}             { return ATSTokenTypes.REF_IDENTIFIER; }
+{WHITE_SPACE}               { return ATSTokenTypes.Companion.getWHITE_SPACE(); }
+{CRLF}                      { return ATSTokenTypes.Companion.getCRLF(); }
+{IDENTIFIER}                { return ATSTokenTypes.Companion.getIDENTIFIER(); }
+"!"{IDENTIFIER}             { return ATSTokenTypes.Companion.getVAL_IDENTIFIER(); }
+"&"{IDENTIFIER}             { return ATSTokenTypes.Companion.getREF_IDENTIFIER(); }
 
 } // End of <YYINITIAL>
 
@@ -345,11 +345,11 @@ CHAR_LITERAL="'"({CHAR_SINGLEQ_BASE})("'"|\\)? | \"({CHAR_DOUBLEQ_BASE})*(\"|\\)
 } // End of <STRING>
 */
 // This seems to cause a bug (OOME) in IntelliJ:
-//<<EOF>>                     { return ATSTokenTypes.EOF; }
+//<<EOF>>                     { return ATSTokenTypes.Companion.getEOF(); }
 //
 // Match anything not picked up and throw an error:
 //
-[^]         { return ATSTokenTypes.BAD_CHARACTER; }
+[^]         { return ATSTokenTypes.Companion.getBAD_CHARACTER(); }
 //
 
 

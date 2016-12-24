@@ -8,7 +8,7 @@ import com.intellij.openapi.vfs.VirtualFile
 /**
  * Created by Brandon Elam Barker on 12/21/2014.
  */
-public class ATSSyntaxHighlighterFactory : SyntaxHighlighterFactory() {
+class ATSSyntaxHighlighterFactory : SyntaxHighlighterFactory() {
 
     override fun getSyntaxHighlighter(project: Project?, virtualFile: VirtualFile?): SyntaxHighlighter {
         return ATSSyntaxHighlighter()

@@ -16,13 +16,13 @@ import com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributes
 /**
  * Created by Brandon Elam Barker on 12/21/2014.
  */
-public class ATSSyntaxHighlighter : SyntaxHighlighterBase() {
+class ATSSyntaxHighlighter : SyntaxHighlighterBase() {
 
     override fun getHighlightingLexer(): Lexer {
-        return FlexAdapter(ATSLexer(null as? Reader))
+        return FlexAdapter(ATSLexer(null as? Reader?))
     }
 
-    override fun getTokenHighlights(tokenType: IElementType): Array<TextAttributesKey>? {
+    override fun getTokenHighlights(tokenType: IElementType): Array<TextAttributesKey> {
 
         val tokenColor: Array<TextAttributesKey>? = tokenColorMap.get(tokenType)
         return tokenColor ?: EMPTY_KEYS
@@ -32,63 +32,63 @@ public class ATSSyntaxHighlighter : SyntaxHighlighterBase() {
 
         // Coloring BAD_CHARACTERs seems to cause a runtime error
         //
-        private val EMPTY_KEYS = array<TextAttributesKey>()
+        private val EMPTY_KEYS = arrayOf<TextAttributesKey>()
         //
 
         //
-        public val ATS_BLOCK_COMMENT: TextAttributesKey = createTextAttributesKey("BLOCK_COMMENT", BLOCK_COMMENT)
-        private val ATS_BLOCK_COMMENT_KEYS = array<TextAttributesKey>(ATS_BLOCK_COMMENT)
+        val ATS_BLOCK_COMMENT: TextAttributesKey = createTextAttributesKey("BLOCK_COMMENT", BLOCK_COMMENT)
+        private val ATS_BLOCK_COMMENT_KEYS = arrayOf<TextAttributesKey>(ATS_BLOCK_COMMENT)
         //
-        public val ATS_BRACES: TextAttributesKey = createTextAttributesKey("BRACES", BRACES)
-        private val ATS_BRACES_KEYS = array<TextAttributesKey>(ATS_BRACES)
+        val ATS_BRACES: TextAttributesKey = createTextAttributesKey("BRACES", BRACES)
+        private val ATS_BRACES_KEYS = arrayOf<TextAttributesKey>(ATS_BRACES)
         //
-        public val ATS_BRACKETS: TextAttributesKey = createTextAttributesKey("BRACKETS", BRACKETS)
-        private val ATS_BRACKETS_KEYS = array<TextAttributesKey>(ATS_BRACKETS)
+        val ATS_BRACKETS: TextAttributesKey = createTextAttributesKey("BRACKETS", BRACKETS)
+        private val ATS_BRACKETS_KEYS = arrayOf<TextAttributesKey>(ATS_BRACKETS)
         //
-        public val ATS_COMMA: TextAttributesKey = createTextAttributesKey("COMMA", COMMA)
-        private val ATS_COMMA_KEYS = array<TextAttributesKey>(ATS_COMMA)
+        val ATS_COMMA: TextAttributesKey = createTextAttributesKey("COMMA", COMMA)
+        private val ATS_COMMA_KEYS = arrayOf<TextAttributesKey>(ATS_COMMA)
         //
-        public val ATS_DIRECTIVES: TextAttributesKey = createTextAttributesKey("DIRECTIVES", PREDEFINED_SYMBOL)
-        private val ATS_DIRECTIVES_KEYS = array<TextAttributesKey>(ATS_DIRECTIVES)
+        val ATS_DIRECTIVES: TextAttributesKey = createTextAttributesKey("DIRECTIVES", PREDEFINED_SYMBOL)
+        private val ATS_DIRECTIVES_KEYS = arrayOf<TextAttributesKey>(ATS_DIRECTIVES)
         //
-        public val ATS_FUNCTION_CALL: TextAttributesKey = createTextAttributesKey("FUNCTION_CALL", FUNCTION_CALL)
-        private val ATS_FUNCTION_CALL_KEYS = array<TextAttributesKey>(ATS_FUNCTION_CALL)
+        val ATS_FUNCTION_CALL: TextAttributesKey = createTextAttributesKey("FUNCTION_CALL", FUNCTION_CALL)
+        private val ATS_FUNCTION_CALL_KEYS = arrayOf<TextAttributesKey>(ATS_FUNCTION_CALL)
         //
-        public val ATS_IDENTIFIER: TextAttributesKey = createTextAttributesKey("IDENTIFIER", IDENTIFIER)
-        private val ATS_IDENTIFIER_KEYS = array<TextAttributesKey>(ATS_IDENTIFIER)
+        val ATS_IDENTIFIER: TextAttributesKey = createTextAttributesKey("IDENTIFIER", IDENTIFIER)
+        private val ATS_IDENTIFIER_KEYS = arrayOf<TextAttributesKey>(ATS_IDENTIFIER)
         //
-        public val ATS_LINE_COMMENT: TextAttributesKey = createTextAttributesKey("LINE_COMMENT", LINE_COMMENT)
-        private val ATS_LINE_COMMENT_KEYS = array<TextAttributesKey>(ATS_LINE_COMMENT)
+        val ATS_LINE_COMMENT: TextAttributesKey = createTextAttributesKey("LINE_COMMENT", LINE_COMMENT)
+        private val ATS_LINE_COMMENT_KEYS = arrayOf<TextAttributesKey>(ATS_LINE_COMMENT)
         //
-        public val ATS_KEYWORD: TextAttributesKey = createTextAttributesKey("KEYWORD", KEYWORD)
-        private val ATS_KEYWORD_KEYS = array<TextAttributesKey>(ATS_KEYWORD)
+        val ATS_KEYWORD: TextAttributesKey = createTextAttributesKey("KEYWORD", KEYWORD)
+        private val ATS_KEYWORD_KEYS = arrayOf<TextAttributesKey>(ATS_KEYWORD)
         //
-        public val ATS_LOCAL_VARIABLE: TextAttributesKey = createTextAttributesKey("LOCAL_VARIABLE", LOCAL_VARIABLE)
-        private val ATS_LOCAL_VARIABLE_KEYS = array<TextAttributesKey>(ATS_LOCAL_VARIABLE)
+        val ATS_LOCAL_VARIABLE: TextAttributesKey = createTextAttributesKey("LOCAL_VARIABLE", LOCAL_VARIABLE)
+        private val ATS_LOCAL_VARIABLE_KEYS = arrayOf<TextAttributesKey>(ATS_LOCAL_VARIABLE)
         //
-        public val ATS_NUMBER: TextAttributesKey = createTextAttributesKey("NUMBER", NUMBER)
-        private val ATS_NUMBER_KEYS = array<TextAttributesKey>(ATS_NUMBER)
+        val ATS_NUMBER: TextAttributesKey = createTextAttributesKey("NUMBER", NUMBER)
+        private val ATS_NUMBER_KEYS = arrayOf<TextAttributesKey>(ATS_NUMBER)
         //
-        public val ATS_OPERATION_SIGN: TextAttributesKey = createTextAttributesKey("OPERATION_SIGN", OPERATION_SIGN)
-        private val ATS_OPERATION_SIGN_KEYS = array<TextAttributesKey>(ATS_OPERATION_SIGN)
+        val ATS_OPERATION_SIGN: TextAttributesKey = createTextAttributesKey("OPERATION_SIGN", OPERATION_SIGN)
+        private val ATS_OPERATION_SIGN_KEYS = arrayOf<TextAttributesKey>(ATS_OPERATION_SIGN)
         //
-        public val ATS_PARENTHESES: TextAttributesKey = createTextAttributesKey("PARENTHESES", PARENTHESES)
-        private val ATS_PARENTHESES_KEYS = array<TextAttributesKey>(ATS_PARENTHESES)
+        val ATS_PARENTHESES: TextAttributesKey = createTextAttributesKey("PARENTHESES", PARENTHESES)
+        private val ATS_PARENTHESES_KEYS = arrayOf<TextAttributesKey>(ATS_PARENTHESES)
         //
-        public val ATS_SEMICOLON: TextAttributesKey = createTextAttributesKey("SEMICOLON", SEMICOLON)
-        private val ATS_SEMICOLON_KEYS = array<TextAttributesKey>(ATS_SEMICOLON)
+        val ATS_SEMICOLON: TextAttributesKey = createTextAttributesKey("SEMICOLON", SEMICOLON)
+        private val ATS_SEMICOLON_KEYS = arrayOf<TextAttributesKey>(ATS_SEMICOLON)
         //
-        public val ATS_STRING: TextAttributesKey = createTextAttributesKey("STRING", STRING)
-        private val ATS_STRING_KEYS = array<TextAttributesKey>(ATS_STRING)
+        val ATS_STRING: TextAttributesKey = createTextAttributesKey("STRING", STRING)
+        private val ATS_STRING_KEYS = arrayOf<TextAttributesKey>(ATS_STRING)
         //
-        public val ATS_TYPE_DECLARATIONS: TextAttributesKey = createTextAttributesKey("TYPE_DECLARATIONS", FUNCTION_DECLARATION)
-        private val ATS_TYPE_DECLARATIONS_KEYS = array<TextAttributesKey>(ATS_TYPE_DECLARATIONS)
+        val ATS_TYPE_DECLARATIONS: TextAttributesKey = createTextAttributesKey("TYPE_DECLARATIONS", FUNCTION_DECLARATION)
+        private val ATS_TYPE_DECLARATIONS_KEYS = arrayOf<TextAttributesKey>(ATS_TYPE_DECLARATIONS)
         //
-        public val ATS_VAL_DECLARATIONS: TextAttributesKey = createTextAttributesKey("VAL_DECLARATIONS", INSTANCE_FIELD)
-        private val ATS_VAL_DECLARATIONS_KEYS = array<TextAttributesKey>(ATS_VAL_DECLARATIONS)
+        val ATS_VAL_DECLARATIONS: TextAttributesKey = createTextAttributesKey("VAL_DECLARATIONS", INSTANCE_FIELD)
+        private val ATS_VAL_DECLARATIONS_KEYS = arrayOf<TextAttributesKey>(ATS_VAL_DECLARATIONS)
         //
 
-        public val tokenColorMap: Map<IElementType, Array<TextAttributesKey>>
+        val tokenColorMap: Map<IElementType, Array<TextAttributesKey>>
 
         init {
             val tmpMap = HashMap<IElementType, Array<TextAttributesKey>>()
